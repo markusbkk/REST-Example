@@ -1,9 +1,11 @@
+#!/usr/bin/env deno run --allow-net --allow-read --allow-env --allow-sys
+
 // Utilize Deno's new NPM compatibility, since opine has been deprecated
 import express from "npm:express";
 import mongoose from "npm:mongoose@^6.7";
-import Highscore from "./db.ts";
+import Highscore from "../db.ts";
 
-await mongoose.connect("mongodb://localhost/highscores");
+await mongoose.connect("mongodb+srv://test:vIM1OOYYE3Ez9I3u@highscores.njh3evp.mongodb.net/?retryWrites=true&w=majority");
 
 const app = express();
 const api = express.Router();
